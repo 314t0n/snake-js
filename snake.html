@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js"> <!--<![endif]-->
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+        <title>Piton</title>
+        <meta name="description" content="snake, kígyós játék, javascript">
+        <meta name="viewport" content="width=device-width">
+    <link rel="stylesheet" type="text/css" href="snake-asserts/css/bootstrap.min.css">
+    <style>    
+      body {
+        margin: 0px;
+        padding: 0px;
+      }
+      canvas{
+        margin: 0 auto;
+        padding: 0px;     
+        position: relative;
+        display: inline-block;
+        background-color: #F2FDFF;
+      } 
+      #game{
+        border: 1px solid #eee;
+        position: relative;
+        margin: 20px auto;        
+        width: 312.5px;
+        height: 312.5px;
+        text-align: center;
+        padding: 5px;
+        border-radius: 6px;
+        background-color: #00E1FF;
+      }
+      #game-control{
+        border: 1px solid #eee;
+        position: relative;
+        margin: 0px auto;        
+        width: 312.5px;              
+        padding: 5px;
+        border-radius: 6px;
+        background-color: #00E1FF;
+      }
+      #modal{
+           opacity: 0;
+           position: fixed;
+           display: none;
+           margin: auto;
+           color:#000;
+           left:50%;
+           top:50%;
+           width:320px; 
+           height: 160px;
+           margin-left: -160px;
+           margin-top: -80px;    
+           z-index: 1500;        
+           padding:15px;
+           background-color: #eee;
+           border: 1px solid #EFF9FC;
+           border-radius: 6px;
+      }
+       #error{
+           opacity: 0;
+           display: none;
+           position: fixed;
+           margin: auto;
+           color:#000;
+           left:50%;
+           top:50%;
+           width:320px; 
+           height: 100px;
+           margin-left: -160px;
+           margin-top: -50px;    
+           z-index: 1501;        
+           padding:15px;   
+           border-radius: 6px;
+      }
+      .move-rigth{
+          display: block;
+          float: right;
+      }
+
+      #ultimate{
+           opacity: 0;
+           position: absolute;
+           display: none;
+           margin: auto;
+           color:#000;
+           left:50%;
+           top:0;           
+           width:320px; 
+           height: auto;
+           margin-left: -160px;
+           margin-top: 5px;    
+           margin-bottom: 15px;    
+           z-index: 1500;        
+           padding:15px;
+           background-color: #eee;
+           border: 1px solid #EFF9FC;
+           border-radius: 6px;
+      }    
+    </style>
+  </head>
+  <body>
+    <div id="error" class="alert alert-warning"></div>  
+
+    <div id="modal">      
+      <form role="form" id="form-score" >
+           <div class="form-group">  
+          <input type="text" class="form-control" id="input-name" placeholder="Neved">
+        </div>  
+        <div class="form-group">  
+
+          <input type="text" readonly class="form-control" id="input-score" placeholder="Pontod">
+        </div>     
+        <button type="submit" class="btn btn-info">Mentés</button>     
+        <button id="cancel" type="button" class="btn btn-link">Mégse</button> 
+      </form>      
+
+    </div>
+
+    
+      <div id="game">
+        <canvas id="myCanvas" width="778" height="600"></canvas>
+      </div>   
+      <div id="game-control" class="btn-group">
+        <button id="game-run" type="button" class="btn btn-info btn-sm">
+          <span class="glyphicon glyphicon-play"></span>
+        </button>
+        <button id="game-pause" type="button" class="btn btn-info btn-sm">
+          <span class="glyphicon glyphicon-pause"></span>
+        </button>
+        <button id="ultimatez" type="button" class="move-rigth btn btn-warning btn-sm">
+          <span class="glyphicon glyphicon-globe"></span>
+        </button>
+      </div>     
+
+ 
+    <div id="ultimate">
+      <table class="table table-striped">
+        <thead>
+          <tr>
+            <th>#</th>
+            <th>Név</th>
+            <th>Pont</th>           
+          </tr>
+        </thead>
+        <tbody>
+          
+        </tbody>
+      </table>
+    </div>
+
+   <script type="text/javascript" src="app.js"></script>
+   <script type="text/javascript" src="snake.js"></script>
+  </body>
+</html>
