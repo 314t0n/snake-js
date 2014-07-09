@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 Snake
 =========
 
@@ -21,9 +20,3 @@ License
 ----
 
 MIT
-=======
-snake-js
-========
-
-snake game javascript
->>>>>>> c43366fc922fcccc141fc30d000effcc22c07566
